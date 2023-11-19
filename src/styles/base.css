@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "GT-America-Standard-Bold-Trial";
+    src: url("/fonts/GT-America-Standard-Bold-Trial.woff2") format("woff2");
+    font-weight: bold;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GT-America-Standard-Medium-Trial";
+    src: url("/fonts/GT-America-Standard-Medium-Trial.woff2") format("woff2");
+    font-weight: normal;
+    font-display: swap;
+    font-style: normal;
+}
