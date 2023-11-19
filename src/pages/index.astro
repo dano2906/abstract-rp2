@@ -1,8 +1,44 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import {Image} from "astro:assets"
+import Article from "../components/Article.astro"
+import {type IArticle} from "../interfaces/interfaces.ts"
 import Icon from "../../public/Icon.svg"
 import RightArrow from "../../public/right-arrow.svg"
+import i1 from "../../public/images/1.png"
+import i2 from "../../public/images/2.png"
+import i3 from "../../public/images/3.png"
+import i4 from "../../public/images/4.png"
+import i5 from "../../public/images/5.png"
+import i6 from "../../public/images/6.png"
+
+
+const articles: IArticle[] = [
+{
+	image: i1,
+	title: "Using Abstract",
+	subtitle: "Abstract lets you manage, version, and document your designs in one place."
+},{
+	image: i2,
+	title: "Manage your account",
+	subtitle: "Configure your account settings, such as your email, profile details, and password."
+},{
+	image: i3,
+	title: "Manage organizations, teams, and projects",
+	subtitle: "Use Abstract organizations, teams, and projects to organize your people and your work."
+},{
+	image: i4,
+	title: "Manage billing",
+	subtitle: "Change subscriptions and payment details."
+},{
+	image: i5,
+	title: "Authenticate to Abstract",
+	subtitle: "Set up and configure SSO, SCIM, and Just-in-Time provisioning."
+},{
+	image: i6,
+	title: "Abstract support",
+	subtitle: "Get in touch with a human."
+}]
 ---
 
 <Layout title="Abstract">
@@ -31,4 +67,53 @@ import RightArrow from "../../public/right-arrow.svg"
 			</button>
 		</form>
 	</div>
+	<main class="p-32 grid grid-cols-2 gap-24">
+		{
+			articles.map((article)=>(
+				<Article article={article}/>
+			))
+		}
+	</main>
+	<footer class="py-14 px-32 w-full h-auto bg-black flex items-center justify-between">
+		<div class="w-full h-auto flex items-start justify-start gap-x-6">
+			<ul class="flex flex-col items-start justify-start gap-y-1">
+				<h4 class="text-2xl font-gtab font-bold text-left text-white">Abstract</h4>
+				<li class="mt-2"><a href="" class="text-base font-gtam font-medium text-left text-white hover:underline hover:decoration-white hover:underline-offset-2">Start Trial</a></li>
+				<li><a href="" class="text-base font-gtam font-medium text-left text-white hover:underline hover:decoration-white hover:underline-offset-2">Pricing</a></li>
+				<li><a href="" class="text-base font-gtam font-medium text-left text-white hover:underline hover:decoration-white hover:underline-offset-2">Download</a></li>
+			</ul>
+			<ul class="flex flex-col items-start justify-start gap-y-1">
+				<h4 class="text-2xl font-gtab font-bold text-left text-white">Resources</h4>
+				<li class="mt-2"><a href="" class="text-base font-gtam font-medium text-left text-white hover:underline hover:decoration-white hover:underline-offset-2">Blog</a></li>
+				<li><a href="" class="text-base font-gtam font-medium text-left text-white hover:underline hover:decoration-white hover:underline-offset-2">Help Center</a></li>
+				<li><a href="" class="text-base font-gtam font-medium text-left text-white hover:underline hover:decoration-white hover:underline-offset-2">Release Notes</a></li>
+				<li><a href="" class="text-base font-gtam font-medium text-left text-white hover:underline hover:decoration-white hover:underline-offset-2">Status</a></li>
+			</ul>
+			<ul class="flex flex-col items-start justify-start gap-y-1">
+				<h4 class="text-2xl font-gtab font-bold text-left text-white">Community</h4>
+				<li class="mt-2"><a href="" class="text-base font-gtam font-medium text-left text-white hover:underline hover:decoration-white hover:underline-offset-2">Twitter</a></li>
+				<li><a href="" class="text-base font-gtam font-medium text-left text-white hover:underline hover:decoration-white hover:underline-offset-2">LinkedIn</a></li>
+				<li><a href="" class="text-base font-gtam font-medium text-left text-white hover:underline hover:decoration-white hover:underline-offset-2">Facebook</a></li>
+				<li><a href="" class="text-base font-gtam font-medium text-left text-white hover:underline hover:decoration-white hover:underline-offset-2">Dribbble</a></li>
+				<li><a href="" class="text-base font-gtam font-medium text-left text-white hover:underline hover:decoration-white hover:underline-offset-2">Podcast</a></li>
+			</ul>
+			<ul class="flex flex-col items-start justify-start gap-y-1">
+				<h4 class="text-2xl font-gtab font-bold text-left text-white">Company</h4>
+				<li class="mt-2"><a href="" class="text-base font-gtam font-medium text-left text-white hover:underline hover:decoration-white hover:underline-offset-2">About Us</a></li>
+				<li><a href="" class="text-base font-gtam font-medium text-left text-white hover:underline hover:decoration-white hover:underline-offset-2">Careers</a></li>
+				<li><a href="" class="text-base font-gtam font-medium text-left text-white hover:underline hover:decoration-white hover:underline-offset-2">Legal</a></li>
+				<h6 class="mt-7 text-xl font-gtab font-bold text-left text-white hover:underline hover:decoration-white hover:underline-offset-2">Contact Us</h6>
+				<span class="text-sm font-gtam font-light text-left text-white hover:underline hover:decoration-white hover:underline-offset-2">info@abstract.com</span>
+			</ul>
+		</div>
+		<div class="w-full h-full flex flex-col items-end justify-end gap-y-3">
+			<Image src={Icon} alt="Icon" width={128} height={128} format='webp'/>
+			<span class="text-2xl font-gtab font-bold text-left text-white">Copyright 2023</span>
+			<span class="text-base font-gtam font-medium text-left text-white">Abstract Studio Design, Inc.</span>
+			<span class="text-base font-gtam font-medium text-left text-white">All rights reserved</span>
+		</div>
+	</footer>
+	<footer class="p-2 w-full h-auto bg-black flex items-center justify-center">
+		<span class="text-sm font-gtam font-medium text-left text-white">Developed by <a href="https://github.com/dano2906" class="text-med-blue">Dano</a></span>
+	</footer>
 </Layout>

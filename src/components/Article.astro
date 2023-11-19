@@ -1,0 +1,20 @@
+---
+import {type IArticle} from "../interfaces/interfaces.ts"
+import { Image } from "astro:assets";
+
+interface Props {
+    article: IArticle
+}
+
+const {article} = Astro.props;
+const {image,title,subtitle} = article
+---
+
+<article class="flex items-start justify-center gap-x-5">
+    <Image src={image} alt={"Icon"} width={96} height={96} format="webp"/>
+    <div class="flex flex-col items-start justify-center gap-y-4">
+        <h3 class="text-2xl font-gtab font-bold text-left text-black">{title}</h3>
+        <p class="text-xl font-gtam font-medium text-left text-black">{subtitle}</p>
+        <a href="" class="transition-all text-xl font-gtam font-medium text-left text-med-blue after:content-['>'] hover:underline hover:decoration-med-blue hover:underline-offset-2">Learn More </a>
+    </div>
+</article>
