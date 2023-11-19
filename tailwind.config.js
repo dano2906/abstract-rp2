@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'gtab':'GT-America-Standard-Bold-Trial',
-        'gtam':'GT-America-Standard-Medium-Trial'
+        'gtab':['GT-America-Standard-Bold-Trial','system-ui'],
+        'gtam':['GT-America-Standard-Medium-Trial','system-ui']
       },
       colors: {
         'med-blue':"#4C5FD5",

@@ -1,10 +1,34 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Icon from "../components/Icon.astro"
+import {Image} from "astro:assets"
+import Icon from "../../public/Icon.svg"
+import RightArrow from "../../public/right-arrow.svg"
 ---
 
 <Layout title="Abstract">
-	<h1 class="font-gtab text-med-blue text-2xl">Prueba bold</h1>
-	<span class="font-gtam text-light-blue text-lg">Prueba normal</span>
-	<Icon />
+	<header class="w-screen h-auto py-5 px-8 bg-black">
+		<nav class="max-w-6xl h-full mx-auto flex items-center justify-between">
+			<div class="flex items-end justify-center gap-x-2 divide-x-2 divide-white">
+				<a href="" class="text-white">
+					<Image src={Icon} alt="Icon" width={128} height={128} format='webp'/>
+				</a>
+				<a href="" class="px-2 text-white text-xl font-gtam font-normal">Help Center</a>
+			</div>
+			<div class="flex items-end justify-end gap-x-2">
+				<a href="" class="py-2 px-4 text-white bg-slate-900 border border-white text-2xl font-gtam font-extralight rounded-md">Submit a request</a>
+				<a href="" class="py-2 px-6 text-white bg-med-blue text-2xl font-gtam font-extralight rounded-md transition-colors hover:bg-white hover:text-black">Sign in</a>
+			</div>
+		</nav>
+	</header>
+	<div role="search" class="w-full mx-auto p-28 bg-light-blue flex flex-col items-center justify-between gap-y-7">
+		<h1 class="text-7xl font-light font-gtam text-black text-center tracking-tight">How can we help?</h1>
+		<form action="" class="max-w-7xl mx-auto h-auto flex items-center justify-center gap-0.5">
+			<input type="search" name="" id="" class="w-[640px] transition-colors outline-none h-8 p-8 shadow-lg rounded-md text-xl font-light font-gtam border border-black bg-white placeholder:text-black focus:border-med-blue hover:border-med-blue placeholder:transition-colors hover:placeholder:text-med-blue" placeholder="Search"/>
+			<button class="w-8 transition-colors outline-none h-8 p-8 shadow-lg rounded-md font-light font-gtam border border-black bg-white placeholder:text-black hover:border-med-blue grid place-content-center group">
+				<svg width="36px" height="36px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-black transition-colors group-hover:fill-med-blue">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M12.2929 4.29289C12.6834 3.90237 13.3166 3.90237 13.7071 4.29289L20.7071 11.2929C21.0976 11.6834 21.0976 12.3166 20.7071 12.7071L13.7071 19.7071C13.3166 20.0976 12.6834 20.0976 12.2929 19.7071C11.9024 19.3166 11.9024 18.6834 12.2929 18.2929L17.5858 13H4C3.44772 13 3 12.5523 3 12C3 11.4477 3.44772 11 4 11H17.5858L12.2929 5.70711C11.9024 5.31658 11.9024 4.68342 12.2929 4.29289Z"/>
+					</svg>
+			</button>
+		</form>
+	</div>
 </Layout>
